@@ -86,6 +86,12 @@
     text-align: justify;
   }
 
+  .grid-25-25-25-25 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: justify;
+  }
+
   .grid-66-33 {
     display: grid;
     grid-template-columns: 2fr 1fr;
