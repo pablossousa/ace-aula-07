@@ -33,7 +33,13 @@
 <li>Saber determinar a resposta natural e a resposta a um degrau de circuitos RLC em série.</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="transparent" class="transparent" style="--class:transparent;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4">
+<h2 id="introdu%C3%A7%C3%A3o---circuitos-de-segunda-ordem">Introdução - Circuitos de Segunda Ordem</h2>
+<p>Circuitos de segunda ordem são denominados dessa forma devido à presença de dois elementos que armazenam energia (em diversas configurações), cujas tensões e correntes são regidas por equações diferenciais de segunda ordem.</p>
+<p>Em outras palavras, a dinâmica de circuitos de segunda ordem é descrita por equações diferenciais que envolvem a segunda derivada temporal de grandezas como tensão e corrente, refletindo como a energia é trocada entre campos elétricos e magnéticos nos capacitores e indutores presentes no circuito.</p>
+<p>Estamos interessados em encontrar as EDOs de ordem 2 que descrevem a resposta destes circuitos ao estímulo natural e ao estímulo degrau, considerando sempre as configurações mistas dos elementos armazenadores de energia — circuitos RLC — compostos por resistores, capacitores e indutores.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="transparent" class="transparent" style="--class:transparent;">
 <h2 id="introdu%C3%A7%C3%A3o">Introdução</h2>
 <div class="regular">
 <ul>
@@ -90,6 +96,72 @@
 </figcaption>
 </figure>
 </div>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="transparent" class="transparent" style="--class:transparent;">
+<h2 id="resposta-natural-do-circuito-rlc-paralelo">Resposta Natural do Circuito RLC Paralelo</h2>
+<div class="grid-66-33 regular">
+<div class="grid-element">
+<ul>
+<li>Na resposta natural, estamos interessados na tensão \(v(t)\) do circuito. Como todos os elementos estão em paralelo \(C, L \text{ e } R\) sabemos que eles possuem a mesma tensão, portanto, \(v(t)\) nossa grandeza de interesse é partilhada por eles.</li>
+</ul>
+<div class="grid-50-50">
+<div class="grid-element footnotesize">
+<ul>
+<li>Entretanto, \(v(t)\) ainda é desconhecida e por sabermos que o circuito \(RLC\) é um circuito de segunda ordem, devemos de alguma forma encontrar expressões que possuam derivadas de \(v(t)\) até a segunda ordem.</li>
+</ul>
+</div>
+<div class="grid-element footnotesize">
+<ul>
+<li>Pela lei de Ohm, bem como, pelas equações de capacitância e indutância (vistas na <a href="https://diegoascanio.github.io/ace-aula-05">aula cinco</a>), podemos escrever as correntes de cada um destes elementos em função de \(v(t)\), nossa grandeza de interesse e até então, desconhecida.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="grid-element">
+
+<p><img src="./img/circuito-rlc-paralelo-natural.png" alt="grid-img" /></p>
+</div>
+</div>
+<div class="grid-25-25-25-25 small">
+<div class="grid-element">
+<p>Em função de \(v(t)\):</p>
+<p>\[<br />
+\begin{align}<br />
+I_{C}(t) &amp;= C \frac{dv(t)}{dt} \\<br />
+I_{R}(t) &amp;= \frac{v(t)}{R} \\<br />
+I_{L}(t) &amp;= \frac{1}{L} \int v(t) dt + I_{L}(0)<br />
+\end{align}<br />
+\]</p>
+</div>
+<div class="grid-element scriptsize">
+<p>Pela Lei de Kirchoff das correntes nos nós:</p>
+<p>\[<br />
+\begin{align}<br />
+&amp;I_{C}(t) + I_{R}(t) + I_{L}(t) = 0 \therefore \\<br />
+&amp;C \frac{dv(t)}{dt} + \frac{v(t)}{R} + \frac{1}{L} \int v(t) dt + I_{L}(0) = 0<br />
+\end{align}<br />
+\]</p>
+</div>
+<div class="grid-element tiny">
+<p>Podemos derivar os dois lados da equação à esquerda em relação ao tempo \(t\):</p>
+<p>\[<br />
+\begin{align}<br />
+\frac{d}{dt} &amp;\left( C \frac{dv(t)}{dt} + \frac{v(t)}{R} \right. \\<br />
+&amp;\left. + \frac{1}{L} \int v(t) dt + I_{L}(0) \right) = 0 \therefore \\<br />
+&amp;C \frac{d^{2}v(t)}{dt^{2}} + \frac{1}{R} \frac{dv(t)}{dt} + \frac{1}{L} v(t) = 0<br />
+\end{align}<br />
+\]</p>
+<p>\(I_{L}(0)\) é constante, portanto, \(\frac{d}{dt} I_{L}(0) = 0\).</p>
+</div>
+<div class="grid-element footnotesize">
+<p>Já encontramos a derivada de segunda ordem de \(v(t)\), como esperávamos, agora, multiplicamos a equação por \(1 \over C\) e obtemos:</p>
+<p>\[<br />
+\begin{align}<br />
+&amp;\frac{d^{2}v(t)}{dt^{2}} + \frac{1}{RC} \frac{dv(t)}{dt} + \frac{1}{LC} v(t) = 0<br />
+\end{align}<br />
+\]</p>
 </div>
 </div>
 </section>
