@@ -89,6 +89,8 @@ Já encontramos a derivada de segunda ordem de \\(v(t)\\), como esperávamos, ag
 \end{align}
 \\]
 
+Sendo necessário agora encontrar uma função \\(v(t)\\) que satisfaça a equação diferencial acima.
+
 </div>
 
 </div>

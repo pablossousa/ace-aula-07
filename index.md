@@ -12,8 +12,8 @@
     background-color: transparent!important;
   }
 
-  .transparent-table-tr-td-th {
-    background-color: rgba(0, 0, 0, 0.0) !important;
+  section.ttable table {
+    margin: auto;
   }
 
   .cabecalho {
@@ -77,6 +77,9 @@
     text-align: center;
   }
   section.lead h2 {
+    text-align: center;
+  }
+  section.lead h3 {
     text-align: center;
   }
   
@@ -351,6 +354,184 @@ Já encontramos a derivada de segunda ordem de \\(v(t)\\), como esperávamos, ag
 \end{align}
 \\]
 
+Sendo necessário agora encontrar uma função \\(v(t)\\) que satisfaça a equação diferencial acima.
+
 </div>
+
+</div>
+
+
+---
+
+## Resposta Natural do Circuito RLC Paralelo - Solução Geral da Equação Diferencial de Segunda Ordem
+
+<div class="grid-50-50 regular">
+
+<div class="grid-element">
+
+Recapitulando nossa EDO de ordem 2, temos:
+
+\\[
+\begin{align}
+    &\frac{d^{2}v(t)}{dt^{2}} + \frac{1}{RC} \frac{dv(t)}{dt} + \frac{1}{LC} v(t) = 0 \tag{1} \label{eq:edo_{2}}\\
+\end{align}
+\\]
+
+Pela nossa EDO ser de segunda ordem, não podemos solucioná-la pelo método da separação de variáveis para EDOs homogêneas de ordem 1. Mas, sabemos que toda EDO tem por solução uma função exponencial em função de \\(t\\). Consideremos \\(v(t)\\) como
+
+\\[
+    v(t) = A e^{st}
+\\]
+
+É \\(A e^{st}\\) uma função candidata para solucionar nossa EDO representada pela equação 1? Para descobrirmos, vamos substituir \\(v(t)\\) na equação 1 por \\(A e^{st}\\):
+
+
+</div>
+
+<div class="grid-element footnotesize">
+
+<!-- _class: center -->
+### Substituindo \\(v(t)\\) por \\(A e^{st}\\) na equação 1
+
+\\[
+\begin{align}
+    &\frac{d^{2}(A e^{st})}{dt^{2}} + \frac{1}{RC} \frac{d(A e^{st})}{dt} + \frac{1}{LC} (A e^{st}) = 0 \therefore \\\\
+    &A s^{2} e^{st} + \frac{1}{RC} A s e^{st} + \frac{1}{LC} A e^{st} = 0 \therefore \\\\
+    &A e^{st} \left( s^{2} + \frac{s}{RC} + \frac{1}{LC} \right) = 0 \tag{2} \label{edo:caract} \\
+\end{align}
+\\]
+
+Estudando a equação 2, 
+
+\\[A e^{st} \left( s^{2} + \frac{s}{RC} + \frac{1}{LC} \right) = 0 \leftrightarrow A = 0 \text{ ou } {s^2 + \frac{s}{RC} + \frac{1}{LC} = 0} \\]
+
+Pois, \\(e^{st} \neq 0 \text{ } \forall t\\). Se \\(A\\) for nulo, isso implica que \\(v(t) = 0 \text{ } \forall t\\) o que é fisicamente impossível na ocasião em que exista energia armazenada nos elementos do circuito em seu estado inicial, implicando assim que \\(A\\) seja não nulo para generalizar! Logo, \\(A e^{st}\\) é solução candidata para a solução da EDO de ordem 2 quando \\(s^2 + \frac{s}{RC} + \frac{1}{LC} = 0\\). 
+
+O termo \\(s^2 + \frac{s}{RC} + \frac{1}{LC}\\) é chamado de **equação característica** da EDO de ordem 2 e suas raízes \\(s_{1}\\) e \\(s_{2}\\), chamadas de **raízes características** da EDO de ordem 2, fazem com que seja possível encontrar soluções da forma \\(v(t) = A e^{s_{1}t}\\) e \\(v(t) = B e^{s_{2}t}\\) para a EDO de ordem 2.
+
+</div>
+
+</div>
+
+
+---
+
+## Resposta Natural do Circuito RLC Paralelo - Solução Geral da Equação Diferencial de Segunda Ordem
+
+<div class="grid-50-50 regular">
+
+<div class="grid-element">
+
+A equação \\(s^2 + \frac{s}{RC} + \frac{1}{LC} = 0\\) é chamada de **equação característica** da EDO de ordem 2 porquê suas raízes \\(s_{1}\\) e \\(s_{2}\\) determinam o caráter matemático de \\(v(t)\\).
+
+Para encontrar suas raízes, apenas resolvemos esta equação de segundo grau pela fórmula de Bhaskara:
+
+\\[s_{1,2} = \frac{-\frac{1}{RC} \pm \sqrt{\left(\frac{1}{RC}\right)^2 - 4\frac{1}{LC}}}{2}\\]
+
+Aplicando as manipulações algébricas adequdas temos que:
+
+\\[
+\begin{align}
+    s_{1} &= -\frac{1}{2RC} + \sqrt{\left(\frac{1}{2RC}\right)^2 - \frac{1}{LC}} \\\\
+    s_{2} &= -\frac{1}{2RC} - \sqrt{\left(\frac{1}{2RC}\right)^2 - \frac{1}{LC}}
+\end{align}
+\\]
+
+</div>
+
+<div class="grid-element">
+
+Se substituirmos \\(s\\) por \\(s_{1}\\) ou \\(s_{2}\\) na equação \\(v(t) = Ae^{st}\\), a solução satisfaz a EDO descrita pela equação [1](#7), pois, para qualquer valor de \\(A\\), \\(s^{2} + \frac{s}{RC} + \frac{1}{LC} = 0\\) quando \\(s = s_{1}\\) ou \\(s = s_{2}\\), já que \\(s_{1}, s_{2}\\) são raízes da equação característica.
+
+Considere agora \\(v_{1}(t) = A_{1}e^{s_{1}t}\\) e \\(v_{2}(t) = A_{2}e^{s_{2}t}\\) como soluções da EDO [1](#7). A soma \\(v(t) = v_{1}(t) + v_{2}(t)\\) também é solução da EDO (demonstração presente no livro do Riedel 8ª edição).
+
+Destarte, a solução geral da resposta natural do circuito \\(RLC\\) é dada por:
+
+<div style="box-sizing: border-box; border: 3px dotted #7851A9;">
+
+\\[
+    V(t) = A_{1}e^{s_{1}t} + A_{2}e^{s_{2}t}
+\\]
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+---
+
+## Resposta Natural do Circuito RLC Paralelo - Solução Geral da Equação Diferencial de Segunda Ordem
+
+<div class="grid-50-50 regular">
+
+<div class="grid-element">
+
+É conveniente escrever \\(s_{1} e s_{2}\\) em função dos parâmetros \\(\alpha \text{ e } \omega_{0}\\) para interpretar o comportamento do circuito em relação a seus parâmetros \\(RLC\\) e de suas características — superamortecimento, subamortecimento e amortecimento crítico — que serão estudadas adiante. 
+
+Considerando \\(\alpha = \frac{1}{2RC}\\) e \\(\omega_{0} = \frac{1}{\sqrt{LC}}\\), temos:
+
+\\[
+\begin{align}
+    s_{1} &= -\alpha + \sqrt{\alpha^{2} - \omega_{0}^{2}} \\\\
+    s_{2} &= -\alpha - \sqrt{\alpha^{2} - \omega_{0}^{2}} 
+\end{align}
+\\]
+
+Os parâmetros \\(\alpha \text{ e } \omega_{0}\\) são conhecidos respectivamente por frequência de néper (ou fator de amortecimento) e frequência angular de ressonância (ou fator de oscilação) e eles que ditarão as características do circuito (superamortecimento, subamortecimento e amortecimento crítico).
+
+</div>
+
+<div class="grid-element">
+
+A tabela abaixo apresenta um resumo destes parâmetros para facilitar o entendimento:
+
+<div class="scriptsize" style="width: 80%; margin: auto; text-align: center;">
+
+<!-- _class: ttable -->
+|      Parâmetro     |              Terminologia             |                      Valor (na resposta natural)                    |      Unidade      |
+|:------------------:|:-------------------------------------:|:-------------------------------------------------------------------:|:-----------------:|
+| \\(s_{1}, s_{2}\\) |    Raízes da equação característica   | \\(s_{1}, s_{2} = -\alpha \pm \sqrt{\alpha^{2} - \omega_{0}^{2}}\\) |\\(\frac{rad}{s}\\)|
+|  \\(\alpha\\)      |          Frequência de néper          |                \\( \alpha = \frac{1}{2RC} \\)                       |\\(\frac{rad}{s}\\)|
+| \\(\omega_{0}\\)   |   Frequência angular de ressonância   |           \\( \omega_{0} = \frac{1}{\sqrt{LC}} \\)                  |\\(\frac{rad}{s}\\)|
+
+</div>
+
+Porque as unidades de todos os parâmetros estão em \\(\frac{rad}{s}\\)? Porque as raízes \\(s_{1}\\) e \\(s_{2}\\) (e por consequência, os parâmetros \\(\alpha \text{ e } \omega_{0}\\) que as determinam) são coeficientes do tempo \\(t\\) na exponencial \\(e^{st}\\). Como o expoente de \\(e\\) deve ser adimensional, logo, \\(s\\) deve ter a dimensão do recíproco (neste caso, inverso) do tempo — a frequência — para manter o expoente de \\(e^{st}\\) adimensional.
+
+</div>
+
+</div>
+
+
+---
+
+## Resposta Natural do Circuito RLC Paralelo - Solução Geral da Equação Diferencial de Segunda Ordem
+
+<div class="normal">
+
+Como visto no slide anterior, \\(\alpha\\) (frequência de néper) e \\(\omega_{0}\\) (frequência natural) ditam a natureza das raízes \\(s_{1}\\) e \\(s_{2}\\) e, por consequência, o comportamento do circuito na resposta ao estímulo natural.
+
+Quando \\({\omega_{0}}^{2} < {\alpha}^{2}\\), as raízes \\(s_{1}, s_{2}\\) são reais e distintas, e a resposta natural é do tipo **superamortecida**.
+
+Quando \\({\omega_{0}}^{2} = {\alpha}^{2}\\), as raízes são reais e iguais, e a resposta natural é do tipo **criticamente amortecida**. 
+
+Quando \\({\omega_{0}}^{2} > {\alpha}^{2}\\), as raízes são complexas conjugadas, e a resposta natural é do tipo **subamortecida**.
+
+Veremos mais adiante as características de cada uma destas respostas. Por hora, vamos aprender como determinar as raízes da equação característica de um circuito \\(RLC\\) paralelo através do exemplo 8.1 (pág. 296) do livro do NILSSON, RIEDEL - 10ª edição.
+
+</div>
+
+
+---
+
+## Resposta Natural do Circuito RLC Paralelo - Solução Geral da Equação Diferencial de Segunda Ordem
+
+### Determinação das raízes da equação característica de um circuito RLC paralelo
+
+<iframe src="https://diegoascanio.github.io/jupyterlite/lab?path=exemplo_8.1.ipynb" width=100% height=100%></iframe> 
 
 </div>

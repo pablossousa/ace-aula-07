@@ -12,8 +12,8 @@
     background-color: transparent!important;
   }
 
-  .transparent-table-tr-td-th {
-    background-color: rgba(0, 0, 0, 0.0) !important;
+  section.ttable table {
+    margin: auto;
   }
 
   .cabecalho {
@@ -77,6 +77,9 @@
     text-align: center;
   }
   section.lead h2 {
+    text-align: center;
+  }
+  section.lead h3 {
     text-align: center;
   }
   
