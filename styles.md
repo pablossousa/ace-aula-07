@@ -4,6 +4,17 @@
     background-size: cover;
   }
 
+  section.center img {
+    display: block;
+    margin: auto;
+  }
+
+  img[alt=small-img] {
+    display: block;
+    margin: auto;
+    width: 30%;
+  }
+
   .transparent {
     background-color: transparent!important;
   }

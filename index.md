@@ -4,6 +4,17 @@
     background-size: cover;
   }
 
+  section.center img {
+    display: block;
+    margin: auto;
+  }
+
+  img[alt=small-img] {
+    display: block;
+    margin: auto;
+    width: 30%;
+  }
+
   .transparent {
     background-color: transparent!important;
   }
@@ -531,5 +542,62 @@ Veremos mais adiante as características de cada uma destas respostas. Por hora,
 ## Determinação das raízes da equação característica de um circuito RLC paralelo
 
 <iframe src="https://diegoascanio.github.io/jupyterlite/lab?path=exemplo_8.1.ipynb" width=100% height=100%></iframe> 
+
+</div>
+
+
+---
+
+## Características das Respostas Naturais dos Sistemas de Segunda Ordem
+
+Já vimos que existem três tipos de respostas naturais para sistemas de segunda ordem, que são: superamortecida, criticamente amortecida e subamortecida, mas, não aprendemos ainda a distinguí-las. Nos próximos slides, começando da ordem reversa, vamos aprender como se comportam a partir de uma aplicação que pode ser modelada por um sistema de segunda ordem: portas mecânicas de fechamento automático (sistema massa-mola-amortecedor).
+
+
+---
+
+## Características das Respostas Naturais dos Sistemas de Segunda Ordem
+
+<div class="regular">
+
+**Resposta subamortecida (oscila em torno do ponto de equilíbrio)**
+
+<!-- _class: center -->
+![](./img/subamortecido.gif)
+
+- O sistema não tem amortecimento suficiente para prevenir oscilações, mas, tem algum amortecimento que faz com que as oscilações decaiam ao longo do tempo.
+- As raízes \\(s_{1}, s_{2}\\) do polinômio característico são distintas e imaginárias.
+
+</div>
+
+
+---
+
+## Características das Respostas Naturais dos Sistemas de Segunda Ordem
+
+<div class="regular">
+
+**Resposta criticamente amortecida (não oscila em torno do ponto de equilíbrio e alcança este ponto rapidamente)**
+
+![small-img](./img/criticamente_amortecido.webp)
+
+
+- O sistema tem amortecimento crítico — **AMORTECIMENTO MÍNIMO O SUFICIENTE** — para prevenir oscilações — por isso, dizemos que é criticamente amortecido — e por não ter amortecimento maior do que o necessário, o sistema atinge o ponto de equilíbrio (seu estado estacionário) o mais rápido possível.
+- As raízes \\(s_{1}, s_{2}\\) do polinômio característico são iguais e reais.
+
+</div>
+
+
+---
+
+## Características das Respostas Naturais dos Sistemas de Segunda Ordem
+
+<div class="regular">
+
+**Resposta superamortecida (não oscila em torno do ponto de equilíbrio e alcança este ponto lentamente)**
+
+<video style="display: block; margin: auto;" width="240" controls src="./videos/superamortecido.mp4" type="video/mp4"></video>
+
+- O sistema tem superamortecimento — **AMORTECIMENTO MAIOR DO QUE O SUFICIENTE PARA PREVENIR OSCILAÇÕES** — por isso, dizemos que é superamortecido — e por ter amortecimento maior do que o necessário, o sistema atinge o ponto de equilíbrio (seu estado estacionário) de forma lenta.
+- As raízes \\(s_{1}, s_{2}\\) do polinômio característico são distintas e reais.
 
 </div>
