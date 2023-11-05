@@ -106,6 +106,13 @@
     text-align: justify;
   }
 
+  .grid-33-33-33 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: justify;
+  }
+
+
   .grid-66-33 {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -591,13 +598,182 @@ Já vimos que existem três tipos de respostas naturais para sistemas de segunda
 
 ## Características das Respostas Naturais dos Sistemas de Segunda Ordem
 
-<div class="regular">
+<div class="grid-50-50 regular">
+
+<div class="grid-element">
 
 **Resposta superamortecida (não oscila em torno do ponto de equilíbrio e alcança este ponto lentamente)**
 
-<video style="display: block; margin: auto;" width="240" controls src="./videos/superamortecido.mp4" type="video/mp4"></video>
-
 - O sistema tem superamortecimento — **AMORTECIMENTO MAIOR DO QUE O SUFICIENTE PARA PREVENIR OSCILAÇÕES** — por isso, dizemos que é superamortecido — e por ter amortecimento maior do que o necessário, o sistema atinge o ponto de equilíbrio (seu estado estacionário) de forma lenta.
 - As raízes \\(s_{1}, s_{2}\\) do polinômio característico são distintas e reais.
+
+**Agora, a primeira ordem apresentada das respostas é retomada, sendo discutidas (a seguir) as respostas naturais — superamortecida, criticamente amortecida e subamortecida — do circuito RLC**
+
+</div>
+
+<div class="grid-element">
+
+<video style="display: block; margin: auto;" width="240" controls src="./videos/superamortecido.mp4" type="video/mp4"></video>
+
+</div>
+
+</div>
+
+
+---
+
+## Formas de resposta natural de um circuito \\(RLC\\) paralelo
+
+<div class="regular">
+
+Pela superposição, sabemos que a tensão de um circuito \\(RLC\\) paralelo em resposta ao estímulo natural tem a forma:
+
+\\[
+    v = A_{1} e^{s_{1} t} + A_{2} e^{s_{2} t}
+\\]
+
+Para encontrar as soluções para a resposta natural (como também para o degrau ) é necessário encontrar os valores de \\(A_{1}\\) e \\(A_{2}\\).
+
+Como estamos lidando com equações diferenciais ordinárias da segunda ordem, só conseguiremos obter os valores de \\(A_{1}, A_{2}\\) na resposta ao estímulo natural se conhecermos as condições iniciais do circuito (tensão e / ou corrente no instante \\(t = t_{0}\\)), bem como, as derivadas de primeira ordem da tensão e / ou corrente no mesmo instante.
+
+Para a resposta de um circuito \\(RLC\\) ao estímulo degrau, como verificado adiante, são necessários os valores finais das grandezas de interesse \\((V_{f} \text{ e / ou } I_{f})\\).
+
+Para cada tipo de resposta existente — **superamortecida, criticamente amortecida e subamortecida** — existe uma forma de determinar os valores de \\(A_{1}\\) e \\(A_{2}\\) e, consequentemente, determinar a função da resposta natural do circuito.
+
+</div>
+
+
+---
+
+## Formas de resposta natural de um circuito \\(RLC\\) paralelo — Resposta Superamortecida
+
+<div class="grid-50-50 regular">
+
+<div class="grid-element">
+
+- Recapitulando: ocorre quando as raízes da equação característica são reais e distintas.
+
+- A solução para \\(v(t)\\) tem a forma
+
+\\[
+    v(t) = A_{1} e^{s_{1} t} + A_{2} e^{s_{2} t}
+\\]
+
+- Para determinar as constantes \\(A_{1}\\) e \\(A_{2}\\), precisamos das condições iniciais do circuito, dadas pelos valores de \\(v(0^{+})\\) e \\(\frac{dv(0^{+})}{dt}\\) que por sua vez, são determinados pela tensão inicial no capacitor, \\(V_{0}\\), e pela corrente inicial no indutor, \\(I_{0}\\).
+
+</div>
+
+<div class="grid-element">
+
+Considerando \\(v(0^{+})\\), temos:
+
+\\[
+    v(0^{+}) = A_{1} e^{s_{1} \times 0} + A_{2} e^{s_{2} \times 0} = A_{1} + A_{2}
+\\]
+
+Ao fazermos a primeira derivada, temos:
+
+\\[
+    \frac{dv(t)}{dt} = A_{1} s_{1} e^{s_{1} t} + A_{2} s_{2} e^{s_{2} t}
+\\]
+
+Substituindo \\(t = 0^{+}\\), temos:
+
+\\[
+\begin{align}
+    \frac{dv(0^{+})}{dt} &= A_{1} s_{1} e^{s_{1} \times 0} + A_{2} s_{2} e^{s_{2} \times 0} \therefore \\\\
+    \frac{dv(0^{+})}{dt} &= s_{1} A_{1} + s_{2} A_{2}
+\end{align}
+\\]
+
+Se conhecermos \\(s_{1}\\) e \\(s_{2}\\), encontrar \\(A_{1}\\) e \\(A_{2}\\) limita-se a:
+1. Determinar \\(v(0^{+})\\) e \\(\frac{dv(0^{+})}{dt}\\);
+2. Resolver o sistema linear resultante.
+
+</div>
+
+</div>
+
+
+---
+
+## Formas de resposta natural de um circuito \\(RLC\\) paralelo — Resposta Superamortecida
+
+<div class="grid-50-50 regular">
+
+<div class="grid-element">
+
+Se conhecermos \\(s_{1}\\) e \\(s_{2}\\), encontrar \\(A_{1}\\) e \\(A_{2}\\) limita-se a:
+1. Determinar \\(v(0^{+})\\) e \\(\frac{dv(0^{+})}{dt}\\);
+2. Resolver o sistema linear resultante.
+
+</div>
+
+<div class="grid-element">
+
+<!-- _class: transparent center -->
+![](./img/circuito-rlc-paralelo-natural.png)
+
+</div>
+
+</div>
+
+<div class="grid-33-33-33 footnotesize">
+
+<div class="grid-element">
+
+- O valor \\(v_{0^{+}}\\) é a tensão \\(V_{0}\\) no capacitor no instante \\(t=0^{+}\\);
+- Pelas equações da capacitância:
+
+\\[
+\begin{align}
+    i_{C}(0^{+}) &= C \frac{dv_{0^{+}}}{dt} \therefore \\\\
+    \frac{dv_{0^{+}}}{dt} &= \frac{i_{C}(0^{+})}{C} \tag{3}
+\end{align}
+\\]
+
+</div>
+
+<div class="grid-element">
+
+- Assim, temos que determinar qual a corrente \\(i_{C}(0^{+})\\) que circula no capacitor no instante \\(t=0^{+}\\);
+- Pela Lei de Kirchoff das Correntes nos nós, temos que \\(0 = i_{C} + i_{L} + i_{R} \\);
+- Pela Lei de Ohm, temos que \\(i_{R} = \frac{V_{0}}{R}\\);
+- A corrente presente no indutor no instante de tempo \\(t=0^{+}\\) é \\(I_{0}\\);
+
+</div>
+
+<div class="grid-element">
+
+- Reorganizando a equação obtida pela LKC nos nós obtém-se: \\(i_{C} = -i_{R} - i_{L}\\);
+- Substituindo-se \\(I_{R}\\) por \\(\frac{V_{0}}{R}\\) e \\(I_{L}\\) por \\(I_{0}\\), temos que \\(i_{C} = -\frac{V_{0}}{R} - I_{0}\\);
+- Assim, podemos determinar o valor numérico de \\(i_{C}(0^{+})\\) e substituir na equação (3) para determinar \\(\frac{dv_{0^{+}}}{dt}\\).
+- Depois, substituimos \\(v_{0^{+}}\\) e \\(\frac{dv_{0^{+}}}{dt}\\) no sistema linear e o resolvemos, obtendo \\(A_{1}\\) e \\(A_{2}\\).
+
+</div>
+
+</div>
+
+
+---
+
+## Formas de resposta natural de um circuito \\(RLC\\) paralelo — Resposta Superamortecida
+
+<div class="regular">
+
+O processo para determinação da resposta superamortecida \\(v(t)\\) pode ser resumido da seguinte forma — ipsis líteris ao contido em NILSSON, RIEDEL 10ª Edição p. 298:
+
+1. Determine as raízes da equação característica \\(s_{1}\\) e \\(s_{2}\\), usando os valores de \\(R, L \text{ e } C\\);
+2. Determine \\(v(0^{+})\\) e \\(\frac{dv(0^{+})}{dt}\\) usando análise de circuitos;
+3. Determine os valores de \\(A_{1}\\) e \\(A_{2}\\) usando as equações simultaneamente:
+\\[
+\begin{align}
+v(0^{+}) &= A_{1} + A_{2} \\\\
+\frac{dv(0^{+})}{dt} &= \frac{i_{C}(0^{+})}{C} = s_{1}A_{1} + s_{2}A_{2}
+\end{align}
+\\]
+4. Substitua os valores de \\(s_{1}, s_{2}, A_{1} \text{ e } A_{2}\\) na equação da resposta natural \\(v(t) = A_{1}e^{s_{1}t} + A_{2}e^{s_{2}t}\\) para determinar \\(v(t), t \geq 0\\).
+
+Resolveremos dois exemplos (8.2, 8.3) presentes no livro de NILSSON, RIEDEL 10ª Edição p. 298-300 para ilustrar o processo de determinação da resposta superamortecida.
 
 </div>
