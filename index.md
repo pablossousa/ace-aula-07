@@ -550,8 +550,6 @@ Veremos mais adiante as características de cada uma destas respostas. Por hora,
 
 <iframe src="https://diegoascanio.github.io/jupyterlite/lab?path=exemplo_8.1.ipynb" width=100% height=100%></iframe> 
 
-</div>
-
 
 ---
 
@@ -777,3 +775,11 @@ v(0^{+}) &= A_{1} + A_{2} \\\\
 Resolveremos dois exemplos (8.2, 8.3) presentes no livro de NILSSON, RIEDEL 10ª Edição p. 298-300 para ilustrar o processo de determinação da resposta superamortecida.
 
 </div>
+
+
+---
+
+## Resposta Natural Superamortecida RLC — Exemplo 8.2
+
+
+<iframe src="https://diegoascanio.github.io/jupyterlite/lab?path=exemplo_8.2.ipynb" width=100% height=100%></iframe> 
