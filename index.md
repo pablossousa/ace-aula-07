@@ -463,7 +463,7 @@ Se substituirmos \\(s\\) por \\(s_{1}\\) ou \\(s_{2}\\) na equação \\(v(t) = A
 
 Considere agora \\(v_{1}(t) = A_{1}e^{s_{1}t}\\) e \\(v_{2}(t) = A_{2}e^{s_{2}t}\\) como soluções da EDO [1](#7). A soma \\(v(t) = v_{1}(t) + v_{2}(t)\\) também é solução da EDO (demonstração presente no livro do Riedel 8ª edição).
 
-Destarte, a solução geral da resposta natural do circuito \\(RLC\\) é dada por:
+Destarte, a solução geral da resposta natural do circuito \\(RLC\\) quando \\(s_{1} \neq s_{2} \\) é dada por:
 
 <div style="box-sizing: border-box; border: 3px dotted #7851A9;">
 
