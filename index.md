@@ -857,7 +857,7 @@ Verificamos de imediato que a matriz dos coeficientes é singular, pois \\(det(\
 
 <div class="regular">
 
-Considerando que \\(s_{1} = s_{2} = s\\) precisamos encontrar função (funções) candidata(s) para \\(v(t)\\) que forme(m) um conjunto fundamental de soluções para a equação diferencial homogênea que sejam linearmente independentes, para que \\(D_{1} (A_{1}) \neq -D_{2} (A_{2})\\) e portanto, outra solução além da trivial — \\(v(t) = 0\\) \\(\forall t \geq 0 \\), físicamente inviável  — seja possível.
+Considerando que \\(s_{1} = s_{2} = s = - \alpha = -\frac{1}{2RC} \\) precisamos encontrar função (funções) candidata(s) para \\(v(t)\\) que forme(m) um conjunto fundamental de soluções para a equação diferencial homogênea que sejam linearmente independentes, para que \\(D_{1} (A_{1}) \neq -D_{2} (A_{2})\\) e portanto, outra solução além da trivial — \\(v(t) = 0\\) \\(\forall t \geq 0 \\), físicamente inviável  — seja possível.
 
 Considerar \\(v(t) = (D_{1}t + D_{2})e^{st}\\) forma este conjunto de soluções fundamentais? Vamos verificar.
 
