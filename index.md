@@ -1051,8 +1051,93 @@ Agora, substitua as constantes arbitrárias \\( A_{1} + A_{2} \\) e \\( j (A_{1}
 
 Observações:
 - Não se deixe enganar pelo fato de que \\(B_{2} = j(A_{1} - A_{2})\\). Neste caso, \\(A_{1}\\) e \\(A_{2}\\) são conjugados complexos, de modo que \\(B_{1}, B_{2}\\) são reais, de acordo com Nilsson Riedel 10ª edição.
-    - Quem provar matematicamente que \\(B_{1}, B_{2}\\) são reais ganha 3 pontos extras, quero a prova formatada no LaTeX.
+    - Quem provar matematicamente que \\(B_{1}, B_{2}\\) são reais ganha 3 pontos extras, quero a prova formatada em LaTeX.
 
 </div>
+
+</div>
+
+
+---
+
+## Resposta Natural Subamortecida do circuito RLC paralelo
+
+<div class="grid-50-50 small">
+
+
+<div class="grid-element">
+
+Conhecendo a forma geral da resposta Subamortecida de um circuito \\(RLC\\) paralelo dada por:
+
+\\[
+    v(t) =  e^{-\alpha t} \left[ B_{1} \cdot \cos(\omega_{d} t) + B_{2} \cdot \sin(\omega_{d} t) \right]
+\\]
+
+Devemos agora determinar \\(B_{1}\\) e \\(B_{2}\\). Para a resposta subamortecida, as duas equações simultâneas que determinam \\(B_{1}\\) e \\(B_{2}\\) dependem das condições iniciais \\(v(0^{+})\\) e \\(\frac{dv(0^{+})}{dt}\\) do circuito, sendo:
+
+\\[
+\begin{align}
+v(0^{+}) &= V_{0} = B_{1} \\\\
+\frac{dv(0^{+})}{dt} = \frac{i_{C}(0^{+})}{C} = - \alpha B_{1} + \omega_{d} B_{2}
+\end{align}
+\\]
+
+
+</div>
+
+<div class="grid-element">
+
+Verificaremos no exemplo 8.4 — NILSSON, RIEDEL 10ª Ed. — que a resposta subamortecida de um circuito é caracterizada por oscilações indicadas por funções trigonométricas, com a tensão alternando entre valores positivos e negativos. A frequência dessas oscilações é determinada por \\(\omega_{d}\\), enquanto a taxa de diminuição da amplitude é regida pelo fator de amortecimento \\(\alpha\\). A frequência \\(\omega_{d}\\) é conhecida como a frequência angular amortecida, que é menor do que a frequência natural \\(\omega_{0}\\) em presença de um elemento dissipativo \\(R\\) no circuito. Quando \\(\alpha \neq 0\\), a frequência de oscilação é considerada amortecida.
+
+</div>
+
+</div>
+
+
+---
+
+<!-- _class: lead -->
+# Resolução do Exemplo 8.4 direta, no jupyter notebook em sala de aula
+
+
+---
+
+<iframe src="https://diegoascanio.github.io/jupyterlite" width=100% height=100%></iframe> 
+
+
+---
+
+<div class="regular">
+
+# Seminários de estudos autônomos - valor base 6 pontos + 6 pontos bônus na prova
+
+Vocês serão divididos em grupos de até quatro pessoas.
+
+Vocês devem construir seus slides com base no meu modelo de slides para a aula 7, disponível em [https://github.com/diegoascanio/ace-aula-07](https://github.com/diegoascanio/ace-aula-07), no meu formato de slides.
+
+Grupo 1 - Responsável por determinar as características da resposta subamortecida natural
+Grupo 2 - Responsável por determinar a forma da resposta superamortecida a um degrau no circuito RLC paralelo
+Grupo 3 - Responsável por determinar a forma da resposta criticamente amortecida a um degrau no circuito RLC paralelo
+Grupo 4 - Responsável por determinar a forma da resposta subamortecida a um degrau no circuito RLC paralelo.
+Grupo 5 - Responsável por determinar a forma da resposta superamortecida natural e degrau no circuito RLC série
+Grupo 6 - Responsável por determinar a forma da resposta criticamente amortecida natural e degrau no circuito RLC série
+Grupo 7 - Responsável por determinar a forma da resposta subamortecida natural e degrau no circuito RLC série
+Grupo 8 - Responsável por abordar a perspectiva prática: a sincronização do relógio de um computador.
+Grupo 9 - Responsável por abordar a perspectiva prática: um circuito de ignição.
+
+</div>
+
+
+---
+
+<div class="cabecalho large">
+Referências Bibliográficas
+</div>
+<div class="conteudo normal">
+
+- RIEDEL, SUSAN A.; NILSSON, James W. — Circuitos Elétricos 8ª ed. 2009.
+- RIEDEL, SUSAN A.; NILSSON, James W. — Circuitos Elétricos 10ª ed. 2015.
+- DE MELO, E. G. — Curso: LOM3202 - Circuitos Elétricos (2020). Accessed August 6, 2023. https://edisciplinas.usp.br/course/view.php?id=82680.
+- DE ARAÚJO, THABATTA M. A. - SLIDES E NOTAS DE AULAS - Disponível junto à profª Thabatta.
 
 </div>
