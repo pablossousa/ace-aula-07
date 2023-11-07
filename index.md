@@ -942,7 +942,7 @@ Utilizaremos o exemplo 8.5 do livro de NILSSON, RIEDEL 10ªed. implementado em u
 
 ## Resposta Natural Subamortecida do circuito RLC paralelo
 
-<div class="grid-50-50 regular">
+<div class="grid-50-50 small">
 
 <div class="grid-element">
 
@@ -952,11 +952,106 @@ Quando consideramos a resposta subamortecida de um circuito RLC, admitimos que a
 j \omega_{d}
 \\]
 
+Consideremos \\(s_{1}, s_{2} = -\alpha \pm \sqrt{\alpha^{2} - \omega_{0}^{2}}\\).
 
+É possível reescrever \\(s_{1}\\) (e \\(s_{2}\\)), por conveniência da expressão, como:
+
+\\[
+\begin{align}
+    s_{1} &= -\alpha + \sqrt{-({\omega_{0}}^{2} - \alpha^{2})} \therefore \\\\
+          &= -\alpha + \sqrt{(-1) \cdot ({\omega_{0}}^{2} - \alpha^{2})} \therefore \\\\
+          &= -\alpha + j \sqrt{{\omega_{0}}^{2} - \alpha^{2}} \therefore \\\\
+          &= -\alpha + j \omega_{d} \\\\
+    s_{2} &= -\alpha - j \omega_{d}
+\end{align}
+\\]
 
 </div>
 
 <div class="grid-element">
+
+Onde \\(\omega_{d}\\) é a frequência angular amortecida do circuito – termo explicado adiante – definida como:
+
+<div class="normal" style="border: 2px solid #7851A9; padding: 5px; margin: 5px 0px;">
+
+\\[
+    \omega_{d} = \sqrt{{\omega_{0}}^{2} - \alpha^{2}}
+\\]
+
+</div>
+
+Considerando que nossas raízes \\(s_{1}\\) e \\(s_{2}\\) são complexas e conjugadas, podemos escrever a resposta natural subamortecida do circuito RLC paralelo pela forma padrao da resposta natural como:
+
+\\[
+    v(t) = A_{1} e^{(-\alpha + j \omega_{d})t} + A_{2} e^{(-\alpha - j \omega_{d})t}
+\\]
+
+Da identidade de euler, temos que:
+
+\\[
+    e^{\pm j \theta} = \cos(\theta) \pm j \sin(\theta)
+\\]
+
+Assim, devemos aplicar manipulações algébricas necessárias para escrevermos a resposta subamortecida como uma soma de senos e cossenos que — SPOILERS INCLUSOS —oculta o termo \\(j\\) (complexo) da resposta final.
+
+</div>
+
+</div>
+
+</div>
+
+
+---
+
+## Resposta Natural Subamortecida do circuito RLC paralelo
+
+<div class="grid-50-50 small">
+
+<div class="grid-element">
+
+A partir de
+
+\\[
+\begin{align}
+    v(t) &= A_{1} e^{(-\alpha + j \omega_{d})t} + A_{2} e^{(-\alpha - j \omega_{d})t} \\\\
+    &\text{Temos: } \\\\
+    &= A_{1} e^{-\alpha t} e^{j \omega_{d} t} + A_{2} e^{-\alpha t} e^{-j \omega_{d} t} \therefore \\\\
+    &= e^{-\alpha t} \left( A_{1} e^{j \omega_{d} t} + A_{2} e^{-j \omega_{d} t} \right) \\\\
+    &\text{Aplicando a identidade de Euler: } \\\\
+    &= e^{-\alpha t} \left( A_{1} \cos(\omega_{d} t) + j A_{1} \sin(\omega_{d} t) + \right. \\\\ 
+    &\left. A_{2} \cos(\omega_{d} t) - j A_{2} \sin(\omega_{d} t) \right) \\\\
+    &= e^{-\alpha t} \left[ (A_{1} + A_{2}) \cdot \cos(\omega_{d} t) + \right. \\\\
+    &\left. j (A_{1} - A_{2}) \cdot \sin(\omega_{d} t) \right] 
+\end{align}
+\\]
+
+</div>
+
+<div class="grid-element">
+
+Agora, substitua as constantes arbitrárias \\( A_{1} + A_{2} \\) e \\( j (A_{1} - A_{2}) \\) por novas constantes reais arbitrárias denotadas \\( B_{1} \\) e \\( B_{2} \\), respectivamente, para obter:
+
+\\[
+\begin{align}
+    v(t) &=  e^{-\alpha t} \left[ B_{1} \cdot \cos(\omega_{d} t) + B_{2} \cdot \sin(\omega_{d} t) \right] \therefore \\\\
+\end{align}
+\\]
+
+<div style="border: 2px solid #7851A9; padding: 5px; margin: 5px 0px; text-align: center;">
+
+\\[
+\begin{align}
+    v(t) &= B_{1} e^{-\alpha t} \cdot \cos(\omega_{d} t) + B_{2} e^{-\alpha t} \cdot \sin(\omega_{d} t)
+\end{align}
+\\]
+
+**A forma padrão da resposta natural subamortecida.**
+
+</div>
+
+Observações:
+- Não se deixe enganar pelo fato de que \\(B_{2} = j(A_{1} - A_{2})\\). Neste caso, \\(A_{1}\\) e \\(A_{2}\\) são conjugados complexos, de modo que \\(B_{1}, B_{2}\\) são reais, de acordo com Nilsson Riedel 10ª edição.
+    - Quem provar matematicamente que \\(B_{1}, B_{2}\\) são reais ganha 3 pontos extras, quero a prova formatada no LaTeX.
 
 </div>
 
