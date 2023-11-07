@@ -1123,7 +1123,6 @@ Grupo 5 - Responsável por determinar a forma da resposta superamortecida natura
 Grupo 6 - Responsável por determinar a forma da resposta criticamente amortecida natural e degrau no circuito RLC série
 Grupo 7 - Responsável por determinar a forma da resposta subamortecida natural e degrau no circuito RLC série
 Grupo 8 - Responsável por abordar a perspectiva prática: a sincronização do relógio de um computador.
-Grupo 9 - Responsável por abordar a perspectiva prática: um circuito de ignição.
 
 </div>
 
