@@ -1,4 +1,4 @@
 ## Objetivos
 
-1. Saber determinar a resposta natural e a resposta a um degrau de circuitos RLC em paralelo.
-2. Saber determinar a resposta natural e a resposta a um degrau de circuitos RLC em série.
+1. Saber a resposta natural de circuitos RLC em paralelo subaortecido.
+2. Saber as características da resposta subamortecida natural.
